@@ -1,16 +1,15 @@
 import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_APIKEY,
-  authDomain: process.env.REACT_APP_AUTHDOMAIN,
-  projectId: process.env.REACT_APP_PROJECTID,
-  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
-  appId: process.env.REACT_APP_APPID,
+  apiKey: "AIzaSyDaiUSSpHMhfYVAhqrdbF2L9Q7wf24VuLg",
+  authDomain: "megaempire-6291d.firebaseapp.com",
+  databaseURL: "https://megaempire-6291d-default-rtdb.firebaseio.com",
+  projectId: "megaempire-6291d",
+  storageBucket: "megaempire-6291d.appspot.com",
+  messagingSenderId: "117016137624",
+  appId: "1:117016137624:web:471ba567e60be8bb7aa5ed",
+  measurementId: "G-3NLWXVL63R",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 export default app;

@@ -23,6 +23,6 @@ export default function useFetch(url) {
       setErr(true);
       console.log(err);
     });
-
+  console.log(data);
   return { loading, data, err };
 }

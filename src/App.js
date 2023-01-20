@@ -11,6 +11,10 @@ import Warinfo from "./pages/Warinfo";
 import Test from "./pages/test";
 import { useEffect } from "react";
 import Clan from "./pages/Clan";
+import Logout from "./pages/Logout";
+import Signup from "./pages/Signup";
+import Loging from "./pages/Loging";
+import RaidLog from "./pages/RaidLog";
 
 function App() {
   let { data } = useClanInfo();
@@ -35,6 +39,10 @@ function App() {
             <Route path="/members" element={<Members />} />
             <Route path="/war/*" element={<Warinfo />} />
             <Route path="/clan/*" element={<Clan />} />
+            <Route path="/raidlog" element={<RaidLog />} />
+            <Route path="/login" element={<Loging />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/test" element={<Test />} />
             <Route path="/error" element={<p>Error</p>} />
             <Route path="/*" element={<NotFound />} />

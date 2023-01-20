@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-function useClanInfo(tag) {
+//http://localhost:8080/api/clancapital/raidlog
+function useClanInfo(tag, limit, after, before) {
   //tagName = tagName.replace("#", "");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
@@ -17,16 +18,25 @@ function useClanInfo(tag) {
             process.env.NODE_ENV === "development"
               ? process.env.REACT_APP_DEV_SERVER
               : process.env.REACT_APP_SERVER
-          }/api/clan`
+          }/api/clancapital/raidlog`
         );
 
         if (tag) {
-          url.searchParams.append("tag", tag);
+          url.searchParams.append("clantag", tag);
+        }
+        if (limit) {
+          url.searchParams.append("limit", limit);
+        }
+        if (after) {
+          url.searchParams.append("after", after);
+        }
+        if (before) {
+          url.searchParams.append("clantag", before);
         }
 
         const res = await fetch(url);
         const data = await res.json();
-        if (res.status>400) {
+        if (res.status > 400) {
           throw Error(data.message);
         }
         setLoading(false);
@@ -35,11 +45,11 @@ function useClanInfo(tag) {
         setLoading(false);
         setError(true);
         console.log("Error!");
-        console.log(err)
+        console.log(err);
       }
     }
     requestFetch();
-  }, [tag]);
+  }, [tag, limit, before, after]);
 
   return {
     loading,

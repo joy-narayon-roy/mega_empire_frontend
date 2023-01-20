@@ -1,257 +1,424 @@
-main * {
-  font-family: coc;
-}
-.clan--nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0.5rem 0;
-}
-.clan--nav_btn {
-  background: linear-gradient(#a09a91 50%, #847c73 0);
-  border: 2px solid #bab8a8;
-  border-radius: 0.5rem;
-  box-shadow: inset 0 2px 0 #000;
-  display: block;
-  width: 40%;
-  text-align: center;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  color: #fff;
-  text-shadow: 0 3px 0 #000;
-}
-.clan--nav_btn.active {
-  background: linear-gradient(#cccabc 50%, #bab8a8 0);
-}
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-.clan--head {
-  padding: 0.5rem;
-  border-radius: 0.6rem;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto;
-  background: linear-gradient(135deg, #807f65, #696657);
-  border: 2px solid #1e1d19;
-  box-shadow: 0px 0px 2px 2px #787873;
-  margin: 10px 0;
+main * {
+  font-family: "Rubik", sans-serif;
+  letter-spacing: 1px;
 }
-.clan--head_left {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  border-right: 1px solid #48463d;
-}
-.clan--head_left .logo {
+img {
   display: block;
   width: 100%;
 }
-.clan--head_left .clan-intro {
-  color: #fff;
+button {
+  outline: none;
 }
-.clan--head_left .clan-intro .clan-intro-info {
+
+main {
+  /* Main */
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+
+  width: 90%;
+  height: auto;
+  min-height: calc(100vh - 100px);
+  margin: 0 auto;
+  max-width: 1200px;
+
+  background: linear-gradient(
+      360deg,
+      #5e5451 91.72%,
+      #776e6b 91.72%,
+      #776e6b 97.77%,
+      #5e5451 98.07%
+    ),
+    #5e5451;
+  border-radius: 1rem;
+}
+
+.tab--nav {
+  /* tab Nav */
+  width: 80%;
+  height: auto;
+  /* border: 1px solid red; */
+  max-width: 700px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 0 1rem;
+}
+.tab--nav_pill {
+  /* Frame 2 */
+  display: block;
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* padding: 20px 50px; */
+  padding: 0.7rem 0;
+
+  background: #797165;
+  border-width: 2px 2px 0px 2px;
+  border-style: solid;
+  border-color: #9a968f;
+  border-radius: 10px 10px 0px 0px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  /* -webkit-text-fill-color: #fff; */
+  /* -webkit-text-stroke-width: 1px; */
+  /* text-shadow: 1px 2px 2px #000; */
+  cursor: pointer;
+  outline: none;
+}
+.tab--nav_pill.active {
+  background: #e8e8e0;
+  color: #4f4f4f;
+}
+
+/* Tab Styles*/
+.tab {
+  /* Tab */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+  background: #e8e8e0;
+  border-radius: 10px;
+  flex-grow: 1;
+}
+
+.tab--options {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0 1.2rem;
+}
+.tab--options_opt {
+  display: block;
+  background: #847c73;
+  border: 2px solid #7c7b75;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  text-align: center;
+}
+.tab--options_opt.active {
+  background: #e8e8e0;
+  color: #4f4f4f;
+}
+
+.tab--info {
+  /* Clan Info */
+  width: calc(100% - 10px);
+  /* height: 400px; */
+  margin: 0.5rem auto;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 0.15fr 0.85fr;
+  overflow: hidden;
+}
+.tab--info_left {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 0.5fr 0.5fr;
+}
+.tab--info_left_ele {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #525047;
+  border-width: 1px 0px 1px 1px;
+  border-style: solid;
+  border-color: #000000;
+  border-radius: 0.8rem 0 0 0.8rem;
+}
+.tab--info_left_ele.active {
+  background: #7c7d63;
+}
+.tab--info_left_ele img {
+  max-width: 100px;
+}
+
+.tab--info_right {
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  border-color: #000000;
+  border-radius: 0 0.8rem 0.8rem 0;
+
+  position: relative;
+  background: #7b7d62;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0.5rem 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px auto;
+}
+.tab--info_right_head {
+  max-width: 500px;
+  max-height: 70px;
+  padding: 0.3rem;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  padding: 0.25rem;
-  padding-right: 20px;
-  margin: 10px 0;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 3px 3px #000000;
 }
-.clan--head_left .clan-intro .clan-intro-info h2 {
-  color: #ffffcc;
-  text-shadow: 0px 3px 0px #000;
-}
-.clan--head_left .clan-intro .clan-intro-info .share {
+.tab--info_right_head div h1 {
   font-size: 2rem;
+  font-weight: bold;
 }
-.clan--head_left .clan-intro p {
-  font-size: 0.75rem;
-  margin-top: 0.8rem;
-  padding: 0.25rem;
-  padding-right: 0.7rem;
-  line-height: 1.2rem;
-  text-shadow: 2px 1px 0px #000;
+.tab--info_right_head button {
+  display: block;
+  width: 30px;
+  background: transparent;
+  border: none;
+}
+
+.tab--info_right_main {
+  position: relative;
+}
+.tab--info_right_main_ele {
+  width: 100%;
+  height: 0px;
+  z-index: 1;
+  opacity: 0;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 0.6fr 0.4fr;
+  overflow: hidden;
+}
+/* .tab--info_right_main_ele > div:first-child {
+  background: red;
+} */
+.tab--info_right_main_ele_data:last-child {
+  border-left: 2px solid #525047;
+}
+.tab--info_right_main_ele.active {
+  z-index: 2;
+  opacity: 1;
+  min-height: 250px;
+  height: auto;
+}
+.tab--info_right_main_ele_data {
+  display: flex;
+  flex-direction: column;
+}
+.tab--info_right_main_ele_data .about {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0.3rem 0.5rem;
+  gap: 1rem;
+}
+.tab--info_right_main_ele_data .about .description {
+  flex-grow: 1;
+  color: #fff;
+  font-weight: 400;
   text-align: justify;
 }
-.clan--head_right {
-  padding-left: 5px;
-  color: #fff;
-  text-shadow: 0px 2px 0px #000;
-  font-size: 0.7rem;
-}
-.clan--head_right table {
-  margin: 20px 0;
-  width: 100%;
-  border: 0;
-  border-collapse: collapse;
-  text-align: left;
-}
-.clan--head_right table tbody tr td {
-  border-bottom: 2px solid #4c4a42;
-  padding: 0.25rem 0;
-  padding-top: 0.5rem;
-}
-
-.clan--head-nav {
-  margin-top: 10px;
-  padding: 5px;
-  border-radius: 10px;
+.tab--info_right_main_ele_data .labals {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  background: #a6a792;
-  border: 2px solid #484833;
+  height: auto;
+  /* padding: 1rem 0; */
 }
-.clan--head-nav button {
-  background: linear-gradient(180deg, var(--btn-green), var(--btn-green-lts));
-  border: 2px solid var(--btn-green);
-  border-radius: 8px;
-  color: #fff;
+.tab--info_right_main_ele_data .labals div {
+  width: 60px;
+  margin: 0 0.5rem;
+  border: 2px solid #c0c0c0;
+  border-radius: 10px;
+}
+.tab--info_right_main_ele_data .labals button {
   display: block;
-  font-family: coc;
-  font-size: 0.8rem;
-  outline: none;
-  padding: 0.5rem;
-  text-shadow: -2px -2px 1px #000;
-}
-.clan--head-nav button:disabled {
-  background: #ccc;
-  text-shadow: -2px -2px 1px #000;
-  border: 2px solid rgb(80, 80, 80);
-  opacity: 0.7;
-}
-
-.clan--members {
-  margin-top: 10px;
-  width: 100%;
-}
-.clan--members .clan--members_member {
-  width: 98%;
-  margin: 10px auto;
-  padding: 0.25rem;
-  border-radius: 0.5rem;
-  background: linear-gradient(
-    #ebede6 25%,
-    #d5d8cc 30% 60%,
-    #d5d8cc 60% 75%,
-    #d5d8cc 75%
-  );
-  background-origin: padding-box;
-  display: grid;
-  grid-template-columns: 20px 30px 40px 60px auto 100px;
-  grid-template-rows: auto;
-  align-items: center;
-  text-align: center;
-  box-shadow: inset 0px 0px 0px 2px #daddd1;
-  position: relative;
-  box-sizing: border-box;
-}
-
-.clan--members .clan--members_member::before {
-  content: " ";
-  width: 100%;
   height: 100%;
-  z-index: -1;
-  border: 3px solid transparent;
-  display: block;
-  background: transparent;
-  position: absolute;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 0px 2px #fcfeef;
+  padding: 0 0.8rem;
+  background: linear-gradient(
+    180deg,
+    #daf582 50%,
+    #bde46e 52.66%,
+    #afdb64 53.98%,
+    #8bc64a 56.25%,
+    #87c348 57.64%,
+    #86c347 58.41%,
+    #67b031 60.62%
+  );
+  color: #000000;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke-width: 1px;
+  border: 1px solid #000000;
+  box-shadow: inset 0px 0px 0px 7px #6bb430;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 900;
 }
-.clan--members .clan--members_member .position {
-  font-size: 1.1rem;
-}
-.clan--members .clan--members_member .position.red {
-  color: red;
-}
-.clan--members .clan--members_member .position.green {
-  color: green;
-}
-.clan--members .clan--members_member .player-details {
-  text-align: left;
-}
-.clan--members .clan--members_member .player-details h3 {
+.tab--info_right_main_ele_data div.row {
+  width: 95%;
+  margin: 2px auto;
+  padding: 3px 0;
+  border-bottom: 1px solid #525047;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   color: #fff;
-  text-shadow: -2px 2px 0px #000;
+  font-weight: 500;
 }
-.clan--members .clan--members_member .player-details small {
-  font-family: sans-serif;
-  font-size: 0.5rem;
+.tab--info_right_main_ele_data div.row div {
+  width: 50%;
 }
-.clan--members img {
-  display: block;
-  width: 100%;
-}
-.clan--members .clan--members_member .tropis {
-  width: 100%;
-  padding: 5px;
-  border-radius: 0.5rem;
-  border: 2px solid #e8e7df;
-  background-image: linear-gradient(#f0d89f, #e8c570);
+
+.tab--warlog {
+  /* War Status */
+  /* Auto layout */
+  width: calc(100% - 10px);
+  height: auto;
+  max-height: 120px;
+  margin: 0.5rem auto;
+  padding: 0px;
+  box-sizing: border-box;
+
   display: grid;
-  grid-template-columns: 70% 30%;
-  grid-template-rows: 100%;
+  grid-template-columns: 0.4fr 0.6fr;
+
+  background: linear-gradient(180deg, #4b4b4b 19.5%, #3a3a3a 66.5%);
+  border: 1px solid #30301c;
+  border-radius: 15px;
+}
+.tab--warlog_ele:first-child {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.clan--members .clan--members_member .tropis span {
-  display: block;
-}
-.clan--members .clan--members_member .tropis span:first-child {
-  text-shadow: -2px -1px 0px #000;
+.tab--warlog_ele:first-child > h1 {
+  font-weight: 500;
   color: #fff;
 }
-.clan--members .clan--members_member .tropis span:last-child {
-  font-size: 1.5rem;
-  color: #fdf22b;
-  text-shadow: 0px 0px 2px #000;
+.tab--warlog_ele:last-child {
+  display: grid;
+  grid-template-columns: 0.25fr 0.25fr 0.2fr 0.25fr;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.tab--warlog_ele:last-child > div {
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+  border-left: 2px solid #282828;
+  padding: 1rem 0.5rem;
+}
+.tab--warlog_ele:last-child > div:nth-child(1) {
+  color: #cfefb5;
+}
+.tab--warlog_ele:last-child > div:nth-child(2) {
+  color: #fbc6c6;
+}
+.tab--warlog_ele:last-child > div:nth-child(3) {
+  color: #cccccc;
+}
+.tab--warlog_ele:last-child > div:nth-child(4) {
+  color: #ffc;
+}
+.tab--warlog_ele img {
+  max-width: 90px;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .clan--head {
-    width: 95%;
-    margin: 0 auto;
-    grid-template-columns: 100%;
-    grid-template-rows: auto auto;
-    border-radius: 5px;
-  }
-  .clan--head_left {
-    grid-template-columns: 100%;
-    grid-template-rows: auto auto;
-    border-right: 0;
-    border-bottom: 3px solid #48463d;
-    border-radius: 5px;
-  }
-  .clan--head_left .clan-intro-info {
-    margin: 0;
-  }
-  .clan--head_left .clan-intro p {
-    display: none;
-  }
-  .clan--head img {
-    display: block;
-    max-width: 200px;
-    margin: 0 auto;
-  }
+.tab--table {
+  width: calc(100% - 15px);
+  /* background: #000; */
+}
+.tab--table_row img {
+  max-width: 80px;
+}
+.tab--table_row div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tab--table_row {
+  width: 100%;
+  max-height: 100px;
+  margin: 0.2rem 0;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 50px 60px 60px auto 165px 120px;
+  grid-template-rows: auto;
+  background: linear-gradient(180deg, #e7e9e2 50%, #d5d8cc 60.5%);
+  border: 2px solid #a4a49f;
+  box-shadow: inset 0px -2px 2px 7px #d5d8cc;
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+.tab--table_row .index {
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #000;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke-width: 0.5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+.tab--table_row .index,
+.tab--table_row .league,
+.tab--table_row .icon,
+.tab--table_row .about {
+  border-right: 2px solid #9b9c97;
 }
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+.tab--table_row .about {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 5px;
 }
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+.tab--table_row .about h1 {
+  font-weight: 900;
+  color: #000;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke-width: 1px;
+  font-size: 1.8rem;
+}
+.tab--table_row .about small {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+.tab--table_row .info {
+  justify-content: space-around;
+  /* flex-direction: row; */
+}
+.tab--table_row .trophy div {
+  position: relative;
+  background: linear-gradient(180deg, #e8c46f 0%, #ebd89c 100%);
+  border: 1.5px solid #ffffff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+.tab--table_row .trophy div img {
+  position: absolute;
+  width: 40px;
+  right: -28px;
 }

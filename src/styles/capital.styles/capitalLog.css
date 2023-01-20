@@ -1,0 +1,260 @@
+section.popup-section {
+  position: relative;
+  /* width: 100vw;
+  height: 100vh; */
+  min-width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background: #000;
+  margin: 0 auto;
+}
+section.popup-section * {
+  box-sizing: border-box;
+  font-family: "Supercell-Magic";
+  font-style: normal;
+  font-weight: 400;
+  color: #000;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke-width: 1px;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.popup {
+  /* Popup */
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  max-width: 880px;
+  left: 0px;
+  right: 0px;
+  top: 0;
+  bottom: 0;
+  margin: auto auto;
+  background: #d8dad0;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    #d8dad0;
+}
+
+.banarimage {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.banarimage img {
+  display: block;
+  width: 100%;
+}
+
+.popup--container {
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  padding: 0.8rem 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto 1fr;
+  grid-row-gap: 1.2rem;
+}
+
+.top {
+  /* Top */
+  /* Auto layout */
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top .blank {
+  /* Blank */
+  opacity: 0;
+  width: 100px;
+  height: auto;
+  border-radius: 20px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.top .popup-header {
+  /* popup-header */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.top .popup-header span {
+  /* Raid Weekend History */
+  width: auto;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border: 2px solid #000000; */
+  text-shadow: 0px 5px 0px #000000;
+  /* Inside auto layout */
+}
+.top .close-btn {
+  /* Close Btn */
+  width: 50px;
+  height: 50px;
+  padding: 0.5rem;
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  /* Rectangle 1 */
+  box-sizing: border-box;
+  background: radial-gradient(100% 100% at 50% 0%, #f18e8c 0%, #eb2a30 100%);
+  border: 3px solid #343333;
+  box-shadow: inset 0px -1px 0px 12px #ec393d;
+  border-radius: 20%;
+}
+
+.middile {
+  width: 100%;
+}
+.middile img {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.main {
+  /* Main */
+  width: 90%;
+  /* max-height: 530px; */
+  overflow-y: scroll;
+  background: #c1beb0;
+  box-shadow: inset 0px 10px 0px #bab2a6;
+  border-radius: 1.2rem;
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  margin: 0 auto;
+}
+.main::-webkit-scrollbar {
+  display: none;
+}
+.main .datas {
+  /* Frame */
+  /* background: #000; */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0px;
+  gap: 30px;
+  /* position: absolute; */
+  width: 100%;
+  height: auto;
+
+  font-size: 1.2rem;
+}
+.main .datas .month {
+  /* Month */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 15px;
+  width: 100%;
+  height: auto;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.month-name {
+  /* Month Name */
+  width: 100%;
+  height: auto;
+  text-shadow: 0px 4px 0px #0d0d0d;
+  text-align: center;
+}
+
+.main .datas .row {
+  width: 97%;
+  height: auto;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  background: radial-gradient(
+    92.78% 92.78% at 50% -25%,
+    #c7bba8 0%,
+    #ac9f87 100%
+  );
+  border: 3px solid #1d1c1a;
+  border-radius: 18px;
+  align-items: center;
+}
+.main .datas .row .img {
+  width: 70px;
+  height: auto;
+}
+.main .datas .row .name {
+  /* Name */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5px 10px;
+  gap: 5px;
+}
+.main .datas .row .name span:nth-child(1) {
+  /* Raid Weekend */
+  width: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-shadow: 0px 4px 0px #000000;
+}
+.main .datas .row .name span:nth-child(2) {
+  width: auto;
+  font-size: 0.6rem;
+  text-shadow: 0px 3px 0px #000000;
+}
+.main .datas .row .status {
+  padding: 0 0.3rem;
+  font-size: 0.9rem;
+  align-items: center;
+  text-align: center;
+  text-shadow: 0px 3px 0px #000000;
+}
+.main .datas .row .go-btn {
+  width: auto;
+  height: auto;
+  padding: 0.5rem 2rem;
+  display: block;
+  background: linear-gradient(180deg, #bde98d 0%, #7dc335 100%);
+  border: 3px solid #232323;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  text-shadow: 0px 2px 0px #000000;
+}
